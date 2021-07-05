@@ -1,6 +1,7 @@
 package com.riuta.recyclerswipe2
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 
 class SwipeAdapter(private val context: Context): RecyclerView.Adapter<SwipeAdapter.SwipeViewHolder>() {
 
@@ -24,11 +26,11 @@ class SwipeAdapter(private val context: Context): RecyclerView.Adapter<SwipeAdap
     override fun onBindViewHolder(holder: SwipeViewHolder, position: Int) {
 
         holder.sogeking.setOnClickListener {
-            Toast.makeText(context, "そげキング", Toast.LENGTH_SHORT).show()
+            Snackbar.make(it, "そげキング", Snackbar.LENGTH_SHORT).show()
         }
 
         holder.catiFram.setOnClickListener {
-            Toast.makeText(context, "カティ・フラム", Toast.LENGTH_SHORT).show()
+            Snackbar.make(it, "カティ・フラム", Snackbar.LENGTH_SHORT).show()
         }
     }
 
