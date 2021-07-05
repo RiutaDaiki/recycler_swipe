@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 class SwipeAdapter(private val context: Context): RecyclerView.Adapter<SwipeAdapter.SwipeViewHolder>() {
 
     inner class SwipeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val sogeking: ImageView = itemView.findViewById(R.id.button_sogeking)
+        val sogeking: ImageView = itemView.findViewById(R.id.sogeking)
+        val catiFram: ImageView = itemView.findViewById(R.id.cati_fram)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SwipeViewHolder {
@@ -26,6 +27,9 @@ class SwipeAdapter(private val context: Context): RecyclerView.Adapter<SwipeAdap
             Toast.makeText(context, "そげキング", Toast.LENGTH_SHORT).show()
         }
 
+        holder.catiFram.setOnClickListener {
+            Toast.makeText(context, "カティ・フラム", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount(): Int = 3
